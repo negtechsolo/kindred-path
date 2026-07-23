@@ -37,7 +37,7 @@ const structuredData = {
   email: "Kindredpathifm@gmail.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "1-5 Oba Akinjobi Way",
+    streetAddress: "1-5 Oba Akinjobi Street, G.R.A.",
     addressLocality: "Ikeja",
     addressRegion: "Lagos",
     addressCountry: "NG",

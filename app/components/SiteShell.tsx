@@ -7,9 +7,12 @@ const nav = [
   ["Home", "/"],
   ["About", "/about"],
   ["Treatments", "/treatments"],
+  ["Costs", "/costs"],
   ["Our team", "/team"],
+  ["Stories", "/stories"],
   ["Resources", "/resources"],
   ["Contact", "/contact"],
+  ["Refer", "/referrals"],
 ];
 
 function Brand() {

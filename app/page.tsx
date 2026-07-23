@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Accordion } from "./components/Accordion";
 import { HeroVisual } from "./components/HeroVisual";
+import { EmbryoViewer } from "./components/EmbryoViewer";
+import { AffiliationBand } from "./components/AffiliationBand";
+import { currency, totalFor, worked } from "./pricing";
 import { faqs, team, treatments, treatmentSlug } from "./data";
 
 const featuredTreatments = treatments.filter((item) => ["IVF", "IUI", "Fertility consultation", "Semen analysis", "Oocyte cryopreservation", "Fertility counselling"].includes(item.title));
@@ -104,6 +107,18 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="section-pad embryo-section">
+        <div className="shell">
+          <div className="section-heading">
+            <span className="eyebrow">Inside the embryology lab</span>
+            <h2>Five days that most people never get to see.</h2>
+            <p className="section-copy">Between egg retrieval and transfer there is a stretch of time where you are waiting and someone else is watching. This is what they are watching.</p>
+          </div>
+          <EmbryoViewer />
+        </div>
+      </section>
+
       <section className="section-pad team-preview">
         <div className="shell">
           <div className="section-heading row-heading"><div><span className="eyebrow">People behind your care</span><h2>Meet the specialists who walk with you.</h2></div><Link className="text-link" href="/team">Meet the full team <span aria-hidden="true">→</span></Link></div>
@@ -121,6 +136,26 @@ export default function Home() {
           <div className="support-image"><img src="/images/supportive-care.webp" alt="A private supportive conversation with a fertility counsellor" /></div>
         </div>
       </section>
+
+
+      <section className="section-pad costs-teaser soft-section">
+        <div className="shell costs-teaser-inner">
+          <div>
+            <span className="eyebrow">Treatment costs</span>
+            <h2>We publish our prices. <em>All of them.</em></h2>
+            <p className="section-copy">A consultation is {currency(30000)}. A full IVF cycle using your own eggs, including tests and medication, realistically starts at {currency(totalFor(worked[0].lines))}. You should not have to book an appointment to find that out.</p>
+            <Link className="button button-primary" href="/costs">See the full tariff</Link>
+          </div>
+          <ul className="costs-teaser-list">
+            <li><strong>{currency(30000)}</strong><span>Consultation, Tuesdays and Thursdays</span></li>
+            <li><strong>{currency(300000)}</strong><span>Laboratory and diagnostic tests</span></li>
+            <li><strong>{currency(1248000)}</strong><span>IVF using your own cycle</span></li>
+            <li><strong>from {currency(1500000)}</strong><span>Medication</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <AffiliationBand />
 
       <section className="section-pad faq-section">
         <div className="shell faq-grid">
