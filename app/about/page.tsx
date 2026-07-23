@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="page-hero-orb orb-a" aria-hidden="true" /><div className="page-hero-orb orb-b" aria-hidden="true" />
         <div className="shell page-hero-grid">
           <div><span className="eyebrow light">About Kindred Path</span><h1>Hope deserves both <em>science and humanity.</em></h1><p>Kindred Path brings specialist fertility care, laboratory expertise and compassionate support together in one coordinated patient journey.</p></div>
-          <div className="page-hero-mark"><img src="/images/kindred-path-mark-compact.png" alt="Kindred Path mother and child emblem" /></div>
+          <div className="page-hero-mark"><img src="/images/kindred-path-mark-compact.webp" alt="Kindred Path mother and child emblem" /></div>
         </div>
       </section>
 

@@ -47,7 +47,7 @@ export default function Home() {
           <div className="image-stack lab-stack">
             <div className="arch-image"><img src="/images/embryology-lab.webp" alt="An embryologist working at a laboratory microscope" /></div>
             <div className="image-note glass-card"><span>Science, guided by humanity</span><strong>Care that sees the whole person.</strong></div>
-            <div className="brand-orbit" aria-hidden="true"><img src="/images/kindred-path-mark-compact.png" alt="" /></div>
+            <div className="brand-orbit" aria-hidden="true"><img src="/images/kindred-path-mark-compact.webp" alt="" /></div>
           </div>
           <div className="section-copy">
             <span className="eyebrow">Why Kindred Path</span>

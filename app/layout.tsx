@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Expert fertility care, explained clearly and delivered compassionately.",
     images: [{ url: "/images/hero-consultation.webp", width: 1598, height: 984, alt: "A fertility consultation at Kindred Path" }],
   },
-  other: { "codex-preview": "development" },
   icons: { icon: "/images/kindred-path-mark-compact.png", shortcut: "/images/kindred-path-mark-compact.png" },
 };
 

@@ -16,7 +16,7 @@ function Brand() {
   return (
     <Link className="brand" href="/" aria-label="Kindred Path Fertility Centre home">
       <span className="brand-mark-wrap" aria-hidden="true">
-        <img src="/images/kindred-path-mark-compact.png" alt="" />
+        <img src="/images/kindred-path-mark-compact.webp" alt="" />
       </span>
       <span className="brand-copy">
         <strong>Kindred Path</strong>
