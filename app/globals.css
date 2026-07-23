@@ -1000,3 +1000,21 @@ em { font-weight: 500; color: var(--violet-700); }
   .tariff-head { flex-direction:column; gap:6px; }
   .related-grid { grid-template-columns:1fr; }
 }
+
+/* ==================== ROUND 3 FIXES ==================== */
+
+/* My last round turned every link inside a hero white, including buttons,
+   which made "Request a consultation" white-on-cream and unreadable. */
+.content-hero a.button, .article-hero a.button { color:var(--violet-900); }
+.content-hero a.button-primary, .article-hero a.button-primary { color:#fff; }
+.content-hero a.button-ghost-light { color:#fff; }
+
+/* .article-hero has a LIGHT background, so forcing white text hid the guide
+   and article headings entirely. Only .content-hero is dark. */
+.article-hero h1, .article-hero h2 { color:var(--violet-950); }
+.article-hero .eyebrow, .article-hero .breadcrumb, .article-hero .breadcrumb a, .article-hero .breadcrumb span { color:var(--violet-700); }
+.article-hero p { color:#554d56; }
+
+.related-more { margin-top:26px; }
+.related-more a { color:var(--violet-700); font-size:.82rem; font-weight:800; }
+.related-more a:hover { text-decoration:underline; }
