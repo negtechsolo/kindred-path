@@ -918,3 +918,85 @@ em { font-weight: 500; color: var(--violet-700); }
   .referral-masthead { padding:18px; }
   .referral-managed { text-align:left; padding-left:0; border-left:0; }
 }
+
+/* ==================== ROUND 2 FIXES ==================== */
+
+/* 9 + 10. FORM FIELDS WERE INVISIBLE: input styling was scoped to .form-step
+   and .contact-form only, so every newer form rendered with unstyled fields. */
+.field-grid label > span,
+.referral-form label > span,
+.survey-details label > span,
+.guide-gate label > span { display:block; margin-bottom:8px; color:#4f4652; font-size:.72rem; font-weight:750; letter-spacing:.01em; }
+.field-grid input:not([type="checkbox"]):not([type="radio"]),
+.field-grid select,
+.field-grid textarea,
+.referral-form input:not([type="checkbox"]),
+.referral-form select,
+.referral-form textarea { width:100%; padding:14px 15px; color:var(--ink); font-family:inherit; font-size:.88rem; background:var(--ivory); border:1px solid var(--line); border-radius:12px; transition:border-color 180ms ease, background 180ms ease, box-shadow 180ms ease; }
+.field-grid input:not([type="checkbox"]), .field-grid select, .referral-form input:not([type="checkbox"]), .referral-form select { height:52px; }
+.field-grid textarea, .referral-form textarea { min-height:120px; line-height:1.6; resize:vertical; }
+.field-grid select, .referral-form select { appearance:none; padding-right:42px; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2366309e' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 16px center; }
+.field-grid input:focus, .field-grid select:focus, .field-grid textarea:focus,
+.referral-form input:focus, .referral-form select:focus, .referral-form textarea:focus { outline:none; background:#fff; border-color:var(--violet-500); box-shadow:0 0 0 3px rgba(148,90,168,.16); }
+.field-grid input::placeholder, .referral-form textarea::placeholder { color:#a79cab; }
+.consent-row { display:flex!important; align-items:flex-start; gap:12px; padding:15px 17px; background:var(--violet-100); border-radius:12px; cursor:pointer; }
+.consent-row input[type="checkbox"] { flex:none; width:19px; height:19px; margin-top:1px; accent-color:var(--violet-800); cursor:pointer; }
+.consent-row > span { margin:0!important; color:var(--violet-900)!important; font-size:.76rem!important; font-weight:500!important; line-height:1.55; }
+
+/* 3 + 5 + 6. HEADINGS AND CAPTIONS INVISIBLE ON DARK PANELS.
+   A bare `h1 {}` rule beats an inherited colour, so each needs it explicitly. */
+.content-hero h1, .article-hero h1, .content-hero h2, .article-hero h2 { color:#fff; }
+.content-hero .eyebrow, .article-hero .eyebrow, .content-hero .breadcrumb, .content-hero a { color:rgba(255,255,255,.8); }
+.affiliation-copy h2, .affiliation-points strong, .referral-aside .aside-copy h2 { color:#fff; }
+.costs-hero-card span, .costs-hero-card strong, .costs-hero-card em, .costs-hero-card div,
+.stories-hero-card span, .stories-hero-card strong, .stories-hero-card em, .stories-hero-card div,
+.referral-hero-card span, .referral-hero-card strong, .referral-hero-card em, .referral-hero-card div { color:#fff; }
+.costs-hero-card em, .stories-hero-card em, .referral-hero-card em { color:rgba(255,255,255,.86); font-style:normal; }
+
+/* 6. Costs hero eyebrow was colliding with the fixed header. */
+.page-hero.costs-hero, .page-hero.referral-hero, .page-hero.stories-hero { padding-block:96px 84px; }
+
+/* 7. ₦30,000 sat differently to every other price because the day note forced
+   the flex row to wrap. Prices are now a right-aligned column. */
+.tariff-head { align-items:flex-start; }
+.tariff-price { flex-direction:column; align-items:flex-end; gap:2px; text-align:right; min-width:190px; }
+.tariff-price small { order:-1; }
+.tariff-price strong { display:block; font-size:1.9rem; line-height:1.1; font-variant-numeric:tabular-nums; }
+.tariff-price em { width:auto; margin-top:2px; font-size:.68rem; font-style:italic; }
+.worked-card li strong, .worked-total strong { font-variant-numeric:tabular-nums; }
+
+/* 4. Mission and vision cards now respond to hover. */
+.values-grid > *, .dark-card { transition:transform 420ms cubic-bezier(.16,1,.3,1), box-shadow 420ms ease, background 520ms ease, border-color 420ms ease; }
+.values-grid > *:hover { transform:translateY(-6px); box-shadow:0 26px 60px rgba(46,21,58,.14); background:linear-gradient(150deg,#fff,var(--violet-100)); border-color:var(--violet-500); }
+.dark-card:hover { transform:translateY(-6px); box-shadow:0 30px 70px rgba(36,18,51,.4); background:linear-gradient(150deg,#4a1f6d,var(--violet-950) 70%,#6b2f9c); }
+
+/* 8. Related content grids on every detail page. */
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(266px,1fr)); gap:16px; margin-top:34px; }
+.related-card { display:flex; flex-direction:column; gap:8px; padding:24px 26px; background:var(--pearl); border:1px solid var(--line); border-radius:var(--radius-md); transition:transform 320ms cubic-bezier(.16,1,.3,1), box-shadow 320ms ease, border-color 320ms ease; }
+.related-card:hover { transform:translateY(-5px); border-color:var(--violet-500); box-shadow:0 20px 46px rgba(46,21,58,.1); }
+.related-card strong { color:var(--violet-950); font-family:var(--font-display),Georgia,serif; font-size:1.16rem; line-height:1.25; }
+.related-card span { flex:1; color:var(--muted); font-size:.78rem; line-height:1.62; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.related-card em { color:var(--violet-700); font-size:.72rem; font-weight:800; font-style:normal; }
+
+/* 2. Embryo viewer polish. */
+.embryo-section { position:relative; }
+.embryo-stage { border:1px solid rgba(216,196,228,.16); }
+.embryo-stage::before { content:""; position:absolute; inset:0; z-index:2; pointer-events:none; border-radius:inherit;
+  background:radial-gradient(circle at 50% 42%, transparent 40%, rgba(20,8,30,.55) 100%); }
+.embryo-stage::after { content:""; position:absolute; z-index:1; left:50%; top:44%; width:78%; height:78%; transform:translate(-50%,-50%);
+  border-radius:50%; background:radial-gradient(circle, rgba(184,148,89,.16), transparent 66%); filter:blur(26px); animation:embryoGlow 7s ease-in-out infinite; }
+@keyframes embryoGlow { 0%,100% { opacity:.55; transform:translate(-50%,-50%) scale(1); } 50% { opacity:1; transform:translate(-50%,-50%) scale(1.1); } }
+.embryo-canvas { z-index:2; }
+.embryo-hint { z-index:3; }
+.embryo-daytag { position:absolute; z-index:3; left:22px; top:20px; padding:7px 15px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:999px; color:#fff; font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; backdrop-filter:blur(10px); }
+.embryo-steps button { position:relative; overflow:hidden; }
+.embryo-steps button::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:2px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 420ms cubic-bezier(.16,1,.3,1); }
+.embryo-steps button.is-active::after { transform:scaleX(1); }
+
+@media (max-width: 720px) {
+  .tariff-price { align-items:flex-start; text-align:left; min-width:0; }
+  .tariff-head { flex-direction:column; gap:6px; }
+  .related-grid { grid-template-columns:1fr; }
+}

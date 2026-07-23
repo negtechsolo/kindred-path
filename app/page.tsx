@@ -103,7 +103,7 @@ export default function Home() {
         <div className="science-cells" aria-hidden="true"><i /><i /><i /></div>
         <div className="shell science-grid">
           <div className="science-copy"><span className="eyebrow light">Clinical care + laboratory expertise</span><h2>Precision behind the scenes. Clarity at every step.</h2><p>Modern fertility care brings together specialist consultation, careful diagnostics, embryology and coordinated nursing support. We translate that science into guidance you can understand.</p><div className="science-points"><span>Specialist-led</span><span>Evidence-aware</span><span>Patient-centred</span></div><Link className="button button-cream" href="/about">How we care</Link></div>
-          <div className="science-image"><img src="/images/embryology-lab.webp" alt="An embryologist at work in a modern laboratory" /><div className="science-caption">Every clinical decision is individual. No website can promise a personal outcome.</div></div>
+          <div className="science-image"><img src="/images/embryology-team.webp" alt="An embryologist at work in a modern laboratory" /><div className="science-caption">Every clinical decision is individual. No website can promise a personal outcome.</div></div>
         </div>
       </section>
 

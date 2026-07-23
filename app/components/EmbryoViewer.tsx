@@ -265,6 +265,7 @@ export function EmbryoViewer() {
   return (
     <div className="embryo-viewer">
       <div className="embryo-stage">
+        <span className="embryo-daytag" aria-hidden="true">{STAGES[stage].day}</span>
         <div className="embryo-canvas" ref={mountRef} aria-hidden="true" />
         {!live && (
           <div className="embryo-fallback" aria-hidden="true">
