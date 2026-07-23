@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Website Terms" };
+
+export default function TermsPage() {
+  return (
+    <main id="main-content"><section className="legal-hero"><div className="shell"><span className="eyebrow light">Website terms</span><h1>Clear boundaries for health information.</h1></div></section><section className="section-pad"><article className="shell legal-content"><p className="legal-updated">Draft website terms · July 2026</p><h2>Educational information</h2><p>Content on this website is general information and does not diagnose a condition, recommend an individual treatment or replace advice from a qualified healthcare professional.</p><h2>No outcome guarantee</h2><p>Fertility outcomes vary. Nothing on this website should be understood as a promise of pregnancy, live birth or any other clinical outcome.</p><h2>Services and suitability</h2><p>A service appearing on this website does not mean it is suitable or available for every patient. Treatment decisions follow consultation, appropriate assessment, clinical judgement and informed consent.</p><h2>Appointments</h2><p>Submitting or sending an appointment request does not confirm an appointment. The care team must contact you to agree an available time.</p><h2>Emergencies</h2><p>This website and its contact forms are not an emergency service. Seek urgent medical help through the appropriate emergency provider if you have severe or urgent symptoms.</p><h2>Accuracy and updates</h2><p>Kindred Path should review clinical profiles, service descriptions, prices, opening hours and contact information regularly. Information may be updated as services change.</p><div className="legal-warning"><strong>Launch requirement</strong><p>This draft should be approved by Kindred Path management or its legal adviser before public launch.</p></div></article></section></main>
+  );
+}

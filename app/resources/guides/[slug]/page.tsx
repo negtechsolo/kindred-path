@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { guides } from "../../../content";
+
+export const generateStaticParams = () => guides.map(({ slug }) => ({ slug }));
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const guide = guides.find((item) => item.slug === slug); return guide ? { title: guide.title, description: guide.description, keywords: guide.keywords } : {}; }
+
+export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; const guide = guides.find((item) => item.slug === slug); if (!guide) notFound();
+  return <main id="main-content"><section className="article-hero"><div className="shell article-hero-inner"><nav className="breadcrumb"><Link href="/resources">Resources</Link><span>›</span><span>Guide</span></nav><span className="eyebrow">{guide.tag} · {guide.read}</span><h1>{guide.title}</h1><p>{guide.description}</p></div></section><section className="section-pad"><div className="shell article-layout"><article className="article-body">{guide.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((p) => <p key={p}>{p}</p>)}{section.bullets && <ul>{section.bullets.map((b) => <li key={b}>{b}</li>)}</ul>}</section>)}<section className="sources"><h2>Trusted sources</h2><ul>{guide.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul></section><p className="medical-note">Last reviewed July 2026. Educational information only; your clinician should interpret it for your circumstances.</p></article><aside className="article-aside"><span className="eyebrow">Your next step</span><h2>Ready for personal guidance?</h2><p>Bring your questions to a confidential consultation.</p><Link className="button button-primary" href="/book">Speak with a specialist</Link></aside></div></section></main>;
+}
