@@ -3,6 +3,7 @@ import { Accordion } from "./components/Accordion";
 import { HeroVisual } from "./components/HeroVisual";
 import { EmbryoViewer } from "./components/EmbryoViewer";
 import { AffiliationBand } from "./components/AffiliationBand";
+import { PlannerBand } from "./components/PlannerBand";
 import { currency, totalFor, worked } from "./pricing";
 import { faqs, team, treatments, treatmentSlug } from "./data";
 
@@ -143,6 +144,8 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      <PlannerBand />
 
       <AffiliationBand />
 

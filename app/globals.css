@@ -1170,3 +1170,49 @@ em { font-weight: 500; color: var(--violet-700); }
   .lead-card { grid-template-columns:1fr; }
   .lead-pitch, .lead-form { padding:30px 24px; }
 }
+
+/* ==================== ROUND 6: MOBILE 3D + PLANNER BAND ==================== */
+
+/* The 3D viewer now runs on phones too. */
+@media (max-width: 720px) {
+  .embryo-stage { display:block; max-width:none; }
+  .embryo-viewer { gap:24px; }
+  .embryo-canvas { touch-action:none; }
+  .embryo-hint { bottom:12px; font-size:.6rem; }
+  .embryo-daytag { left:14px; top:13px; padding:6px 12px; font-size:.6rem; }
+  .embryo-steps { grid-template-columns:repeat(2,1fr); gap:7px; }
+  .embryo-panel h3 { font-size:1.6rem; }
+}
+
+.planner-band { padding:78px 0; background:linear-gradient(140deg,#2c1440,var(--violet-950) 55%,#3f1b55); color:#fff; overflow:hidden; }
+.planner-band-inner { display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:center; }
+.planner-band-copy h2 { margin-top:12px; font-size:2.4rem; line-height:1.14; color:#fff; }
+.planner-band-copy h2 em { color:#e2c98f; font-style:italic; }
+.planner-band-copy p { margin-top:16px; max-width:56ch; color:rgba(255,255,255,.8); font-size:.92rem; line-height:1.78; }
+.planner-band-note { color:#e2c98f!important; font-style:italic; }
+.planner-band-copy .button { margin-top:26px; }
+
+/* Little document mock, drawn in CSS so it costs nothing to load */
+.planner-band-doc { position:relative; justify-self:center; width:min(250px,74vw); aspect-ratio:.72; transform:rotate(-4deg); transition:transform 600ms cubic-bezier(.16,1,.3,1); }
+.planner-band:hover .planner-band-doc { transform:rotate(-1deg) translateY(-6px); }
+.planner-doc-page { position:absolute; inset:0; padding:30px 24px; background:linear-gradient(160deg,#fffdfb,#f4ede5); border-radius:8px; box-shadow:0 30px 70px rgba(0,0,0,.45); }
+.planner-band-doc::before, .planner-band-doc::after { content:""; position:absolute; inset:0; background:#efe6dc; border-radius:8px; }
+.planner-band-doc::before { transform:rotate(5deg) translate(10px,6px); opacity:.28; }
+.planner-band-doc::after { transform:rotate(2.5deg) translate(5px,3px); opacity:.5; }
+.planner-doc-tag { position:absolute; z-index:3; top:-13px; left:50%; transform:translateX(-50%); padding:6px 14px; background:var(--gold); color:#241233; font-size:.6rem; font-weight:800; letter-spacing:.07em; border-radius:999px; white-space:nowrap; }
+.planner-doc-page strong { display:block; color:var(--violet-950); font-family:var(--font-display),Georgia,serif; font-size:1.05rem; line-height:1.2; }
+.planner-doc-page i { display:block; height:5px; margin-top:9px; background:rgba(52,23,77,.13); border-radius:3px; }
+.planner-doc-page i:nth-of-type(1) { margin-top:16px; width:100%; }
+.planner-doc-page i:nth-of-type(2) { width:88%; }
+.planner-doc-page i:nth-of-type(3) { width:64%; }
+.planner-doc-bar { display:flex; gap:2px; margin:16px 0 4px; height:15px; border-radius:3px; overflow:hidden; }
+.planner-doc-bar span:nth-child(1) { width:1%; background:var(--gold); }
+.planner-doc-bar span:nth-child(2) { width:10%; background:#946ba9; }
+.planner-doc-bar span:nth-child(3) { width:41%; background:var(--violet-800); }
+.planner-doc-bar span:nth-child(4) { width:48%; background:var(--violet-950); }
+
+@media (max-width: 900px) {
+  .planner-band { padding:56px 0; }
+  .planner-band-inner { grid-template-columns:1fr; gap:34px; }
+  .planner-band-copy h2 { font-size:1.9rem; }
+}

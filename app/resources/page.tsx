@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PlannerBand } from "../components/PlannerBand";
 import { Accordion } from "../components/Accordion";
 import { contact, faqs } from "../data";
 import { guides } from "../content";
@@ -19,6 +20,7 @@ export default function ResourcesPage() {
       <section className="education-band"><div className="shell education-grid"><div><span className="eyebrow light">Kindred Path Fertility Education Series</span><h2>Practical conversations with fertility professionals.</h2><p>Join the interest list for future webinars and Q&amp;A sessions covering fertility assessment, IVF, male fertility and emotional wellbeing.</p><div className="button-row"><a className="button button-cream" href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent("Hello Kindred Path, please add me to the fertility education and webinar interest list.")}`}>Join the interest list</a><Link className="button button-ghost-light" href="/contact">Ask a question</Link></div></div><div className="education-art" aria-hidden="true"><img src="/images/kindred-path-mark-compact.webp" alt="" /><i /><i /></div></div></section>
 
       <section className="section-pad faq-section"><div className="shell faq-grid"><div className="faq-intro"><span className="eyebrow">Frequently asked</span><h2>Start with what you need to know.</h2><p>We have replaced generic promises with answers that respect individual circumstances.</p><Link className="button button-primary" href="/book">Request a consultation</Link></div><Accordion items={faqs} /></div></section>
+          <PlannerBand />
     </main>
   );
 }

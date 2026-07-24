@@ -160,7 +160,7 @@ export default function CostsPage() {
         </div>
       </section>
 
-      <section className="section-pad soft-section">
+      <section className="section-pad soft-section" id="planner">
         <div className="shell">
           <GuideGate>
             <div className="planner">

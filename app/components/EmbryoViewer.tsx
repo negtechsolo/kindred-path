@@ -91,7 +91,6 @@ export function EmbryoViewer() {
     const mount = mountRef.current;
     if (!mount) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (window.matchMedia("(max-width: 720px)").matches) return;
 
     let disposed = false;
     let cleanup: (() => void) | undefined;
@@ -107,11 +106,12 @@ export function EmbryoViewer() {
             setLive(true);
 
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+            const camera = new THREE.PerspectiveCamera(window.innerWidth < 720 ? 44 : 38, 1, 0.1, 100);
             camera.position.set(0, 0, 4.6);
 
             const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            const small = window.innerWidth < 720;
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, small ? 1.5 : 2));
             renderer.setSize(mount.clientWidth, mount.clientHeight);
             mount.appendChild(renderer.domElement);
 
@@ -131,7 +131,7 @@ export function EmbryoViewer() {
 
             // Zona pellucida, the shell surrounding the embryo.
             const zona = new THREE.Mesh(
-              new THREE.SphereGeometry(1.16, 48, 48),
+              new THREE.SphereGeometry(1.16, small ? 28 : 48, small ? 28 : 48),
               new THREE.MeshStandardMaterial({
                 color: 0xd8c4e4,
                 transparent: true,
@@ -143,7 +143,7 @@ export function EmbryoViewer() {
             );
             group.add(zona);
 
-            const geometry = new THREE.SphereGeometry(1, 24, 24);
+            const geometry = new THREE.SphereGeometry(1, small ? 16 : 24, small ? 16 : 24);
             const cellMaterial = new THREE.MeshStandardMaterial({
               color: 0xf6ecfa,
               roughness: 0.34,
@@ -275,7 +275,7 @@ export function EmbryoViewer() {
           </div>
         )}
         <p className="embryo-hint" aria-hidden="true">
-          Drag to rotate
+          Drag or swipe to rotate
         </p>
       </div>
 
