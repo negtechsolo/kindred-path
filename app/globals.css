@@ -1018,3 +1018,90 @@ em { font-weight: 500; color: var(--violet-700); }
 .related-more { margin-top:26px; }
 .related-more a { color:var(--violet-700); font-size:.82rem; font-weight:800; }
 .related-more a:hover { text-decoration:underline; }
+
+/* Downloadable planner block */
+.guide-download { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; margin-bottom:34px; padding:28px 32px; background:linear-gradient(140deg,var(--violet-900),var(--violet-950)); border-radius:var(--radius-md); color:#fff; }
+.guide-download h3 { margin-top:8px; font-size:1.5rem; color:#fff; }
+.guide-download p { margin-top:8px; max-width:46ch; color:rgba(255,255,255,.76); font-size:.83rem; line-height:1.62; }
+.guide-download .eyebrow { color:var(--gold); }
+.guide-download .button { flex:none; }
+@media (max-width:720px){ .guide-download { padding:22px; } }
+
+/* ==================== ROUND 4: LISTS, WIZARD, MODERN FORMS ==================== */
+
+/* Guides and articles had no bullets or numbering because of the global list reset. */
+.article-body ul, .article-body ol { margin:22px 0; padding-left:0; display:grid; gap:11px; }
+.article-body ul li { position:relative; padding-left:30px; color:#554d56; font-size:.98rem; line-height:1.78; list-style:none; }
+.article-body ul li::before { content:""; position:absolute; left:9px; top:.62em; width:7px; height:7px; background:var(--gold); border-radius:50%; }
+.article-body ol { counter-reset:kp; }
+.article-body ol li { position:relative; padding-left:38px; color:#554d56; font-size:.98rem; line-height:1.78; list-style:none; counter-increment:kp; }
+.article-body ol li::before { content:counter(kp); position:absolute; left:0; top:.1em; width:23px; height:23px; display:grid; place-items:center; background:var(--violet-100); color:var(--violet-800); font-family:var(--font-body),system-ui,sans-serif; font-size:.7rem; font-weight:800; border-radius:50%; }
+.article-body li strong { color:var(--violet-950); }
+.article-body h2 { padding-top:6px; border-top:1px solid var(--line); }
+.article-body > section:first-child h2 { padding-top:0; border-top:0; }
+.article-body h3 { margin:26px 0 10px; color:var(--violet-800); font-size:1.16rem; }
+.question-list li { position:relative; padding-left:30px; color:#4d4450; font-size:.87rem; line-height:1.7; list-style:none; }
+.question-list li::before { content:"?"; position:absolute; left:0; top:0; color:var(--gold); font-weight:800; }
+
+/* Multi-step wizard used by the referral form */
+.wizard { background:var(--pearl); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow); overflow:hidden; }
+.wizard-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:22px 30px; background:linear-gradient(135deg,var(--violet-800),var(--violet-950)); color:#fff; }
+.wizard-brand strong { display:block; font-family:var(--font-display),Georgia,serif; font-size:1.22rem; line-height:1.2; color:#fff; }
+.wizard-brand span { display:block; margin-top:3px; font-size:.7rem; opacity:.74; }
+.wizard-managed { text-align:right; padding-left:16px; border-left:1px solid rgba(255,255,255,.26); }
+.wizard-managed small { display:block; font-size:.55rem; letter-spacing:.11em; text-transform:uppercase; opacity:.66; }
+.wizard-managed strong { display:block; margin-top:3px; font-size:.84rem; color:#fff; }
+
+.wizard-rail { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; padding:20px 30px 0; }
+.wizard-rail > div { display:flex; align-items:center; gap:8px; padding-bottom:12px; border-bottom:2px solid var(--line); transition:border-color 380ms ease; }
+.wizard-rail > div.is-done { border-bottom-color:var(--violet-700); }
+.wizard-rail i { display:grid; place-items:center; width:22px; height:22px; flex:none; background:var(--violet-100); color:var(--violet-700); font-size:.66rem; font-weight:800; font-style:normal; border-radius:50%; transition:background 380ms ease,color 380ms ease; }
+.wizard-rail > div.is-done i { background:var(--violet-800); color:#fff; }
+.wizard-rail span { font-size:.68rem; font-weight:700; color:var(--muted); }
+.wizard-rail > div.is-done span { color:var(--violet-900); }
+
+.wizard-step { padding:30px; animation:wizIn 420ms cubic-bezier(.16,1,.3,1) both; }
+.wizard-step.is-hidden { display:none; }
+@keyframes wizIn { from { opacity:0; transform:translateY(12px);} to { opacity:1; transform:none; } }
+.wizard-step h2 { margin-top:8px; font-size:1.72rem; line-height:1.2; }
+.wizard-help { margin-top:10px; max-width:56ch; color:var(--muted); font-size:.82rem; line-height:1.65; }
+.wizard-step .field-grid { margin-top:22px; }
+.wizard-cards { display:grid; gap:11px; margin-top:22px; }
+.wizard-cards button { display:block; width:100%; text-align:left; padding:18px 22px; background:#fff; border:1px solid var(--line); border-left:4px solid var(--line); border-radius:var(--radius-sm); cursor:pointer; transition:transform 220ms ease,border-color 220ms ease,box-shadow 220ms ease; }
+.wizard-cards button:hover { transform:translateX(4px); box-shadow:0 10px 26px rgba(46,21,58,.09); }
+.wizard-cards button strong { display:block; font-size:1rem; color:var(--violet-950); }
+.wizard-cards button span { display:block; margin-top:3px; font-size:.74rem; color:var(--muted); }
+.wizard-cards .urgency-routine { border-left-color:var(--sage); }
+.wizard-cards .urgency-soon { border-left-color:var(--gold); }
+.wizard-cards .urgency-urgent { border-left-color:#bd4949; }
+.wizard-cards button.is-chosen { background:var(--violet-100); border-color:var(--violet-500); }
+.wizard-recap { list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.wizard-recap li { display:flex; align-items:baseline; gap:8px; padding:9px 15px; background:var(--violet-100); border-radius:999px; }
+.wizard-recap span { color:var(--muted); font-size:.66rem; text-transform:uppercase; letter-spacing:.07em; font-weight:800; }
+.wizard-recap strong { color:var(--violet-900); font-size:.8rem; }
+.wizard-nav { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:26px; }
+.wizard-back { padding:0; background:none; border:0; color:var(--violet-700); font-size:.8rem; font-weight:700; cursor:pointer; }
+.wizard-back:hover { text-decoration:underline; }
+.wizard-privacy { display:flex; gap:10px; margin-top:20px; padding:15px 18px; background:var(--violet-100); border-radius:var(--radius-sm); color:var(--violet-900); font-size:.77rem; line-height:1.6; }
+.wizard-privacy span { color:var(--gold); }
+.wizard-step .consent-row { margin-top:18px; }
+.wizard-done { padding:50px 40px; text-align:center; background:var(--pearl); border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow); }
+.wizard-tick { display:grid; place-items:center; width:56px; height:56px; margin:0 auto 20px; background:linear-gradient(145deg,var(--violet-700),var(--violet-900)); color:#fff; font-size:1.5rem; border-radius:50%; }
+.wizard-done h2 { font-size:1.85rem; }
+.wizard-done p { margin:12px auto 0; max-width:52ch; color:var(--muted); font-size:.87rem; line-height:1.72; }
+.wizard-urgent { margin-top:16px!important; padding:13px 18px; background:#fdf1f1; border-radius:var(--radius-sm); color:#8d3b3b!important; }
+
+/* Contact form given its own identity, distinct from the wizards */
+.contact-form { position:relative; padding:clamp(30px,5vw,50px)!important; border-radius:var(--radius-lg)!important; background:linear-gradient(168deg,#fff,var(--ivory))!important; }
+.contact-form::before { content:""; position:absolute; left:0; right:0; top:0; height:4px; background:linear-gradient(90deg,var(--gold),var(--violet-700),var(--violet-900)); border-radius:var(--radius-lg) var(--radius-lg) 0 0; }
+.contact-form label>span { color:#4f4652; font-size:.72rem; font-weight:750; }
+.contact-form input:not([type=checkbox]),.contact-form textarea,.contact-form select { padding:14px 15px; font-family:inherit; font-size:.88rem; border-radius:12px; transition:border-color 180ms ease,background 180ms ease,box-shadow 180ms ease; }
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus { outline:none; background:#fff; border-color:var(--violet-500); box-shadow:0 0 0 3px rgba(148,90,168,.16); }
+
+@media (max-width:720px){
+  .wizard-head, .wizard-step { padding:20px 18px; }
+  .wizard-rail { padding:16px 18px 0; gap:4px; }
+  .wizard-rail span { display:none; }
+  .wizard-managed { text-align:left; padding-left:0; border-left:0; }
+  .wizard-nav { flex-direction:column-reverse; align-items:stretch; gap:12px; }
+}

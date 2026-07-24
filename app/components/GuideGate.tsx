@@ -45,6 +45,23 @@ export function GuideGate({ children }: { children: ReactNode }) {
             .
           </p>
         )}
+        <div className="guide-download">
+          <div>
+            <span className="eyebrow">Your copy</span>
+            <h3>Take the planner with you.</h3>
+            <p>
+              Four pages. What each stage costs, the nine questions to ask any clinic, and the five
+              warning signs. Print it and bring it to your appointment.
+            </p>
+          </div>
+          <a
+            className="button button-primary"
+            href="/kindred-path-fertility-cost-planner.pdf"
+            download="Kindred-Path-Fertility-Cost-Planner.pdf"
+          >
+            Download the PDF
+          </a>
+        </div>
         {children}
       </div>
     );
@@ -57,9 +74,9 @@ export function GuideGate({ children }: { children: ReactNode }) {
         The questions to ask <em>before</em> you pay for anything.
       </h2>
       <p>
-        A short planner covering what each stage costs, what makes the number move, what to ask any
+        A four-page planner covering what each stage costs, what makes the number move, what to ask any
         clinic before you commit, and how to tell a real quote from an optimistic one. It opens on
-        this page. No download, no waiting.
+        this page and you can download it as a PDF to take with you.
       </p>
       <div className="field-grid">
         <label>
