@@ -125,6 +125,16 @@ export function SiteHeader() {
         aria-label="Mobile navigation"
         aria-hidden={!open}
       >
+        <div className="drawer-head">
+          <strong>Menu</strong>
+          <button
+            type="button"
+            className="drawer-close"
+            aria-label="Close navigation"
+            tabIndex={open ? 0 : -1}
+            onClick={() => setOpen(false)}
+          />
+        </div>
         <div className="drawer-links">
           {nav.map(([label, href]) => {
             const active = isActive(pathname, href);

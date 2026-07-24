@@ -249,7 +249,7 @@ export function EmbryoViewer() {
           })
           .catch(() => setLive(false));
       },
-      { threshold: 0.2 },
+      { threshold: 0, rootMargin: '600px 0px' },
     );
 
     observer.observe(mount);
