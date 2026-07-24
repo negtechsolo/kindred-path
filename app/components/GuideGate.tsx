@@ -68,41 +68,55 @@ export function GuideGate({ children }: { children: ReactNode }) {
   }
 
   return (
-    <form className="guide-gate" onSubmit={submit}>
-      <span className="eyebrow">Free planner</span>
-      <h2>
-        The questions to ask <em>before</em> you pay for anything.
-      </h2>
-      <p>
-        A four-page planner covering what each stage costs, what makes the number move, what to ask any
-        clinic before you commit, and how to tell a real quote from an optimistic one. It opens on
-        this page and you can download it as a PDF to take with you.
-      </p>
-      <div className="field-grid">
-        <label>
-          <span>Full name *</span>
-          <input name="name" required autoComplete="name" />
-        </label>
-        <label>
-          <span>Phone *</span>
-          <input name="phone" required type="tel" autoComplete="tel" />
-        </label>
-        <label className="wide">
-          <span>Email</span>
-          <input name="email" type="email" autoComplete="email" />
-        </label>
-        <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" />
-        <label className="consent-row wide">
-          <input name="consent" type="checkbox" required />
-          <span>
-            I agree that Kindred Path may contact me about fertility care. No medical details are
-            collected here.
-          </span>
-        </label>
+    <form className="lead-card" onSubmit={submit}>
+      <div className="lead-pitch">
+        <span className="eyebrow">Free planner</span>
+        <h2>
+          The questions to ask <em>before</em> you pay for anything.
+        </h2>
+        <p>
+          Five pages, written to be printed and carried into an appointment. Take it to any clinic,
+          including ours.
+        </p>
+        <ul className="lead-contents">
+          <li><strong>Where the money goes</strong><span>All four costs, added up honestly</span></li>
+          <li><strong>Nine questions</strong><span>On the quote, success rates and your plan</span></li>
+          <li><strong>Five warning signs</strong><span>What should make you pause before paying</span></li>
+          <li><strong>What to bring</strong><span>A checklist for your first appointment</span></li>
+        </ul>
       </div>
-      <button className="button button-primary" disabled={status === "sending"}>
-        {status === "sending" ? "Opening…" : "Open the planner"}
-      </button>
+
+      <div className="lead-form">
+        <h3>Where should we send it?</h3>
+        <p className="lead-note">It opens on this page straight away. Nothing to wait for.</p>
+        <div className="field-grid">
+          <label className="wide">
+            <span>Full name *</span>
+            <input name="name" required autoComplete="name" />
+          </label>
+          <label className="wide">
+            <span>Phone *</span>
+            <input name="phone" required type="tel" autoComplete="tel" />
+          </label>
+          <label className="wide">
+            <span>Email</span>
+            <input name="email" type="email" autoComplete="email" />
+          </label>
+          <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" />
+          <label className="consent-row wide">
+            <input name="consent" type="checkbox" required />
+            <span>
+              Kindred Path may contact me about fertility care. No medical details are collected here.
+            </span>
+          </label>
+        </div>
+        <button className="button button-primary lead-submit" disabled={status === "sending"}>
+          {status === "sending" ? "Opening\u2026" : "Open the planner"}
+        </button>
+        <p className="lead-trust">
+          <span aria-hidden="true">\u25c7</span> No spam. We will not share your details.
+        </p>
+      </div>
     </form>
   );
 }

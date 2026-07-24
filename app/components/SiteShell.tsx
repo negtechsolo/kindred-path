@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { contact } from "../data";
 import { ExperienceEnhancer } from "./ExperienceEnhancer";
+import { SiteHeader } from "./SiteHeader";
 import { SocialLinks } from "./SocialLinks";
 
 const nav = [
@@ -26,43 +27,6 @@ function Brand() {
         <span>Fertility Centre</span>
       </span>
     </Link>
-  );
-}
-
-function Header() {
-  return (
-    <header className="site-header">
-      <div className="utility-bar">
-        <div className="shell utility-inner">
-          <span>Private, personalised fertility care in Ikeja</span>
-          <div>
-            <a href={`tel:${contact.phoneHref}`}>{contact.phoneDisplay}</a>
-            <span aria-hidden="true">·</span>
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          </div>
-        </div>
-      </div>
-      <div className="shell header-inner">
-        <Brand />
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {nav.map(([label, href]) => (
-            <Link href={href} key={href}>{label}</Link>
-          ))}
-        </nav>
-        <Link className="button button-primary header-cta" href="/book">
-          Book a consultation <span aria-hidden="true">↗</span>
-        </Link>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation"><span /><span /></summary>
-          <nav aria-label="Mobile navigation">
-            {nav.map(([label, href]) => (
-              <Link href={href} key={href}>{label}</Link>
-            ))}
-            <Link className="button button-primary" href="/book">Book a consultation</Link>
-          </nav>
-        </details>
-      </div>
-    </header>
   );
 }
 
@@ -122,7 +86,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     <>
       <ExperienceEnhancer />
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <Header />
+      <SiteHeader />
       {children}
       <Footer />
       <div className="floating-contact" aria-label="Quick contact">

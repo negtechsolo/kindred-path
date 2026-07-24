@@ -158,6 +158,12 @@ export const team = [
     detail: "Embryology and laboratory services",
     image: "/images/mrs-sholesi.webp",
   },
+  {
+    name: "Adefolake Quadri",
+    role: "Pharmacy Assistant",
+    detail: "Medication guidance and dispensing support",
+    image: "/images/adefolake-quadri.webp",
+  },
 ];
 
 export const faqs = [

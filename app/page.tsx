@@ -119,17 +119,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad team-preview">
-        <div className="shell">
-          <div className="section-heading row-heading"><div><span className="eyebrow">People behind your care</span><h2>Meet the specialists who walk with you.</h2></div><Link className="text-link" href="/team">Meet the full team <span aria-hidden="true">→</span></Link></div>
-          <div className="team-grid preview-grid">
-            {team.slice(0, 4).map((member) => (
-              <article className="team-card" key={member.name}><div className="team-image"><img src={member.image} alt={member.name} /></div><span>{member.role}</span><h3>{member.name}</h3><p>{member.detail}</p></article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section-pad support-section soft-section">
         <div className="shell split-grid reverse-mobile">
           <div className="section-copy"><span className="eyebrow">Support beyond procedures</span><h2>Your emotional wellbeing belongs in the care plan.</h2><p className="lead">Fertility treatment can feel isolating. Confidential counselling and a responsive nursing team can help you process choices, prepare for treatment and feel supported between appointments.</p><ul className="check-list"><li>Individual or couple-focused support</li><li>Clear preparation before each treatment stage</li><li>Questions welcomed without judgement</li></ul><Link className="button button-secondary" href="/resources">Explore patient resources</Link></div>
