@@ -34,7 +34,7 @@ const structuredData = {
   name: "Kindred Path Fertility Centre",
   medicalSpecialty: "ReproductiveMedicine",
   telephone: "+2349132347955",
-  email: "Kindredpathifm@gmail.com",
+  email: "info@kindredpathifm.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1-5 Oba Akinjobi Street, G.R.A.",

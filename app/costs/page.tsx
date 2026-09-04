@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { contact } from "../data";
 import { currency, tariff, tariffNote, totalFor, worked } from "../pricing";
-import { GuideGate } from "../components/GuideGate";
 
 export const metadata: Metadata = {
   title: "Treatment costs",
@@ -161,77 +160,19 @@ export default function CostsPage() {
       </section>
 
       <section className="section-pad soft-section" id="planner">
-        <div className="shell">
-          <GuideGate>
-            <div className="planner">
-              <span className="eyebrow">Your planner</span>
-              <h2>Before you pay any clinic, ask these.</h2>
-
-              <h3>On the quote itself</h3>
-              <ul>
-                <li>
-                  Does this figure include laboratory tests and medication, or is it the treatment
-                  cycle only?
-                </li>
-                <li>What happens to the cost if my cycle is cancelled before egg retrieval?</li>
-                <li>Is embryo freezing and storage included, and what does storage cost per year?</li>
-                <li>Are there separate charges for anaesthesia, theatre, or the embryology lab?</li>
-                <li>What would a second cycle cost, and is any part of it discounted?</li>
-              </ul>
-
-              <h3>On success rates</h3>
-              <ul>
-                <li>
-                  Is your quoted rate a clinical pregnancy rate or a live birth rate? These are very
-                  different numbers.
-                </li>
-                <li>Is it per cycle started, per egg retrieval, or per embryo transfer?</li>
-                <li>What is the rate for someone of my age specifically?</li>
-                <li>How many cycles is that figure based on, and over what period?</li>
-              </ul>
-              <p className="planner-note">
-                If a clinic cannot answer these four questions clearly, the number they quoted you
-                does not mean very much.
-              </p>
-
-              <h3>On the treatment plan</h3>
-              <ul>
-                <li>Why this treatment rather than a simpler or cheaper one?</li>
-                <li>What did my test results specifically show that led to this recommendation?</li>
-                <li>What are the realistic chances that this does not work?</li>
-                <li>Who will I actually see at each appointment?</li>
-              </ul>
-
-              <h3>Warning signs worth taking seriously</h3>
-              <ul>
-                <li>Any guarantee of a baby. Nobody can offer this honestly.</li>
-                <li>Pressure to decide or pay today.</li>
-                <li>Add-on treatments presented as improving your chances without published evidence.</li>
-                <li>A refusal to put costs in writing before you commit.</li>
-                <li>Success rates quoted without an age band or a denominator.</li>
-              </ul>
-
-              <div className="planner-cta">
-                <p>
-                  You are welcome to take these questions to any clinic, including ours. That is the
-                  point of them.
-                </p>
-                <div>
-                  <Link className="button button-primary" href="/book">
-                    Book a consultation
-                  </Link>
-                  <a
-                    className="button button-ghost"
-                    href={`https://wa.me/${contact.whatsapp}?text=${whatsapp}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Ask a question on WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-          </GuideGate>
+        <div className="shell costs-teaser-inner">
+          <div>
+            <span className="eyebrow">Free planner</span>
+            <h2>Before you pay any clinic, <em>read this.</em></h2>
+            <p className="section-copy">We wrote the guide we would want a member of our own family to have: where the money goes, the questions to ask any clinic, and the warning signs. Take it to any clinic, including ours.</p>
+            <Link className="button button-primary" href="/planner">Open the fertility cost planner</Link>
+          </div>
+          <ul className="costs-teaser-list">
+            <li><strong>On the quote</strong><span>What is, and is not, included</span></li>
+            <li><strong>On success rates</strong><span>How to read the numbers honestly</span></li>
+            <li><strong>On the plan</strong><span>Why this treatment, and who you will see</span></li>
+            <li><strong>Warning signs</strong><span>What should make you pause before paying</span></li>
+          </ul>
         </div>
       </section>
 

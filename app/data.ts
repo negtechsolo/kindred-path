@@ -203,7 +203,7 @@ export const contact = {
   phoneDisplay: "+234 913 234 7955",
   phoneHref: "+2349132347955",
   whatsapp: "2349132347955",
-  email: "Kindredpathifm@gmail.com",
+  email: "info@kindredpathifm.com",
   address: "1-5 Oba Akinjobi Street, G.R.A., Ikeja, Lagos",
   hours: "Monday to Friday, 8:00 AM to 4:00 PM",
   instagram: "https://www.instagram.com/kindredpathfertilitycentre/",

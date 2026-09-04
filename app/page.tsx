@@ -4,6 +4,7 @@ import { HeroVisual } from "./components/HeroVisual";
 import { EmbryoViewer } from "./components/EmbryoViewer";
 import { AffiliationBand } from "./components/AffiliationBand";
 import { PlannerBand } from "./components/PlannerBand";
+import { AnniversarySection } from "./components/AnniversarySection";
 import { currency, totalFor, worked } from "./pricing";
 import { faqs, team, treatments, treatmentSlug } from "./data";
 
@@ -34,6 +35,8 @@ export default function Home() {
         </div>
       </section>
 
+      <AnniversarySection />
+
       <section className="journey-finder">
         <div className="shell finder-card">
           <div className="finder-intro"><span>Not sure where to begin?</span><h2>Find the right starting point.</h2></div>
@@ -49,7 +52,7 @@ export default function Home() {
       <section className="section-pad intro-section">
         <div className="shell split-grid">
           <div className="image-stack lab-stack">
-            <div className="arch-image"><img src="/images/embryology-lab.webp" alt="An embryologist working at a laboratory microscope" /></div>
+            <div className="arch-image"><img src="/images/kindred-consultation-scan.webp" alt="A fertility specialist reviewing scan results with a patient" /></div>
             <div className="image-note glass-card"><span>Science, guided by humanity</span><strong>Care that sees the whole person.</strong></div>
             <div className="brand-orbit" aria-hidden="true"><img src="/images/kindred-path-mark-compact.webp" alt="" /></div>
           </div>
@@ -104,7 +107,7 @@ export default function Home() {
         <div className="science-cells" aria-hidden="true"><i /><i /><i /></div>
         <div className="shell science-grid">
           <div className="science-copy"><span className="eyebrow light">Clinical care + laboratory expertise</span><h2>Precision behind the scenes. Clarity at every step.</h2><p>Modern fertility care brings together specialist consultation, careful diagnostics, embryology and coordinated nursing support. We translate that science into guidance you can understand.</p><div className="science-points"><span>Specialist-led</span><span>Evidence-aware</span><span>Patient-centred</span></div><Link className="button button-cream" href="/about">How we care</Link></div>
-          <div className="science-image"><img src="/images/science-lab.webp" alt="An embryologist at work in a modern laboratory" /><div className="science-caption">Every clinical decision is individual. No website can promise a personal outcome.</div></div>
+          <div className="science-image"><img src="/images/kindred-embryologist.webp" alt="An embryologist at work at a microscope in the laboratory" /><div className="science-caption">Every clinical decision is individual. No website can promise a personal outcome.</div></div>
         </div>
       </section>
 

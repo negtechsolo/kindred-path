@@ -10,6 +10,7 @@ const nav: [string, string][] = [
   ["About", "/about"],
   ["Treatments", "/treatments"],
   ["Costs", "/costs"],
+  ["Planner", "/planner"],
   ["Our team", "/team"],
   ["Stories", "/stories"],
   ["Resources", "/resources"],

@@ -1239,3 +1239,28 @@ em { font-weight: 500; color: var(--violet-700); }
 @media (max-width:900px){
   .utility-inner { justify-content:space-between; }
 }
+
+/* ==== Anniversary additions (Sept only) ==== */
+.anniv-ribbon{background:#241233;color:#f0e6d6}
+.anniv-ribbon-inner{display:flex;align-items:center;justify-content:center;gap:14px;padding:11px 0;font-size:.85rem;flex-wrap:wrap;text-align:center}
+.anniv-ribbon b{color:#fff}
+.anniv-ribbon-dot{color:#b89459}
+.anniv-ribbon-cd{color:#f2d488;font-weight:800;font-variant-numeric:tabular-nums}
+.anniv-ribbon a{color:#f2d488;font-weight:800;border-bottom:1px solid rgba(242,212,136,.5);padding-bottom:1px;text-decoration:none}
+.anniv-ribbon a:hover{color:#fff}
+.home-anniv{background:linear-gradient(140deg,#241233,#54258a 70%,#6d2e8d);color:#fff;position:relative;overflow:hidden}
+.home-anniv::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 20%,rgba(184,148,89,.28),transparent 30%),radial-gradient(circle at 85% 80%,rgba(148,90,168,.4),transparent 35%)}
+.home-anniv-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+.home-anniv h2{color:#fff}
+.home-anniv h2 em{color:#f0cd77;font-style:normal}
+.home-anniv .eyebrow{color:#e8c76b}
+.home-anniv p{color:#e7ddea;max-width:520px;margin:16px 0 26px}
+.home-anniv-note{margin-top:16px;font-size:.85rem;color:#cdbcd8}
+.home-anniv-cta{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:.92rem;background:linear-gradient(135deg,#c8a25f,#a67c3c);color:#fff;text-decoration:none;box-shadow:0 14px 34px rgba(150,110,50,.3);border:0}
+.home-anniv-cta:hover{transform:translateY(-2px)}
+.home-cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.home-cd-cell{padding:18px 10px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);text-align:center}
+.home-cd-cell strong{display:block;font-size:2.4rem;color:#f0cd77;line-height:1;font-variant-numeric:tabular-nums;font-family:var(--font-serif,"Cormorant Garamond",Georgia,serif)}
+.home-cd-cell span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#ded2e4}
+.home-cd-caption{text-align:center;color:#e7ddea;font-size:.9rem}
+@media(max-width:820px){.home-anniv-inner{grid-template-columns:1fr;gap:30px}}

@@ -28,7 +28,7 @@ export function PlannerBand() {
           <p className="planner-band-note">
             Take it to our competitors. That is genuinely the point of it.
           </p>
-          <Link className="button button-light" href="/costs#planner">
+          <Link className="button button-light" href="/planner">
             Get the planner
           </Link>
         </div>

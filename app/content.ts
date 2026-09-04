@@ -15,6 +15,7 @@ export type Guide = {
   keywords: string[];
   sections: ContentSection[];
   sources: { label: string; url: string }[];
+  published?: string; // ISO date; if in the future, the article is hidden until then
 };
 
 export type Article = {
@@ -28,6 +29,7 @@ export type Article = {
   sections: ContentSection[];
   faq: { question: string; answer: string }[];
   sources: { label: string; url: string }[];
+  published?: string;
 };
 
 export type TreatmentDetail = {

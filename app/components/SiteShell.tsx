@@ -2,6 +2,7 @@ import Link from "next/link";
 import { contact } from "../data";
 import { ExperienceEnhancer } from "./ExperienceEnhancer";
 import { SiteHeader } from "./SiteHeader";
+import { AnniversaryRibbon } from "./AnniversaryRibbon";
 import { SocialLinks } from "./SocialLinks";
 
 const nav = [
@@ -9,6 +10,7 @@ const nav = [
   ["About", "/about"],
   ["Treatments", "/treatments"],
   ["Costs", "/costs"],
+  ["Planner", "/planner"],
   ["Our team", "/team"],
   ["Stories", "/stories"],
   ["Resources", "/resources"],
@@ -85,6 +87,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ExperienceEnhancer />
+      <AnniversaryRibbon />
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
       {children}
