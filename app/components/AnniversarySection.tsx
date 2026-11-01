@@ -1,61 +1,28 @@
-"use client";
-
-import Link from "next/link";
-import { useEffect, useState } from "react";
-
-const TARGET = new Date("2026-09-24T14:00:00+01:00").getTime();
-const BOOK_URL = "https://september.ifmkindredpathfertilitycentre.com/?src=mainsite";
+import { campaignActive, BOOK_URL, ASK_URL } from '../../lib/campaign';
+import { CampaignWindow } from './CampaignWindow';
 
 export function AnniversarySection() {
-  const [t, setT] = useState<{ d: string; h: string; m: string; s: string }>({
-    d: "--", h: "--", m: "--", s: "--",
-  });
-
-  useEffect(() => {
-    const two = (n: number) => String(n).padStart(2, "0");
-    const tick = () => {
-      const diff = TARGET - Date.now();
-      if (diff <= 0) {
-        setT({ d: "0", h: "0", m: "0", s: "0" });
-        return;
-      }
-      setT({
-        d: String(Math.floor(diff / 86400000)),
-        h: two(Math.floor((diff % 86400000) / 3600000)),
-        m: two(Math.floor((diff % 3600000) / 60000)),
-        s: two(Math.floor((diff % 60000) / 1000)),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <section className="section-pad home-anniv">
-      <div className="shell home-anniv-inner">
-        <div>
-          <span className="eyebrow"><span aria-hidden="true">✦</span> One year of Kindred Path</span>
-          <h2>A year of walking with families. To mark it, <em>your first consultation is free.</em></h2>
-          <p>
-            Through September, we are opening private 30-minute consultations every Thursday at no
-            charge, for women, men and couples. In partnership with IFM LASUTH.
-          </p>
-          <Link className="button home-anniv-cta" href={BOOK_URL}>
-            Book your free September consultation
-          </Link>
-          <div className="home-anniv-note">Limited slots. They close as they fill.</div>
-        </div>
-        <div>
-          <div className="home-cd-grid" suppressHydrationWarning>
-            <div className="home-cd-cell"><strong>{t.d}</strong><span>Days</span></div>
-            <div className="home-cd-cell"><strong>{t.h}</strong><span>Hours</span></div>
-            <div className="home-cd-cell"><strong>{t.m}</strong><span>Mins</span></div>
-            <div className="home-cd-cell"><strong>{t.s}</strong><span>Secs</span></div>
-          </div>
-          <div className="home-cd-caption">until free consultations close on Thursday 24 September</div>
-        </div>
+  if (!campaignActive()) return null;
+  return <CampaignWindow><section className="fertility-week" aria-labelledby="fertility-week-title">
+    <div className="shell fertility-week-grid">
+      <div className="fertility-week-copy">
+        <div className="fertility-partners"><div className="fertility-kindred"><img src="/images/kindred-path-mark-compact.webp" alt=""/><span>Kindred Path<small>FERTILITY CENTRE</small></span></div><span className="fertility-partner-divider"/><img className="fertility-lasuth" src="/images/ifm-lasuth.webp" alt="Lagos State University Teaching Hospital"/></div>
+        <span className="fertility-eyebrow">WORLD FERTILITY DAY 2026</span>
+        <h2 id="fertility-week-title">Fertility <em>Awareness Week</em></h2>
+        <p className="fertility-week-dates">2–8 November 2026</p>
+        <p className="fertility-intro">A little clarity. A private conversation.<br/>A next step that feels right for you.</p>
+        <p className="fertility-partnership">In partnership with <strong>IFM LASUTH</strong><span>Institute of Fertility Medicine, Lagos State University Teaching Hospital</span></p>
+        <div className="fertility-offer"><strong>FREE 30-minute fertility consultations</strong><span>For individuals and couples. Virtual or on-site.</span></div>
+        <div className="fertility-actions"><a className="fertility-book" href={BOOK_URL} data-track="campaign_book">Book a free consultation <span aria-hidden="true">↗</span></a><a className="fertility-ask" href={ASK_URL} data-track="campaign_ask">Ask a private question <span aria-hidden="true">↗</span></a></div>
+        <p className="fertility-reassurance">Not ready to book? Ask with your details or stay anonymous.<br/>No appointment or treatment commitment required.</p>
       </div>
-    </section>
-  );
+      <aside className="fertility-schedule" aria-label="Consultation schedule">
+        <span className="fertility-schedule-label">YOUR TIME TO TALK</span><h3>Three days.<br/><em>Space for your questions.</em></h3>
+        <div className="fertility-date-row">{[['Tue','03'],['Thu','05'],['Tue','10']].map(([day,date])=><div className="fertility-date" key={date}><span>{day}</span><strong>{date}</strong><span>November</span></div>)}</div>
+        <p className="fertility-extra-day">Including an additional consultation day on 10 November.</p>
+        <div className="fertility-schedule-details"><p><span aria-hidden="true">◷</span><span><strong>9:00 AM – 4:00 PM</strong><small>West Africa Time · 30-minute appointments</small></span></p><p><span aria-hidden="true">⌖</span><span><strong>Join virtually or visit us</strong><small>IFM LASUTH, SDG Building, Ikeja</small></span></p></div>
+        <div className="fertility-schedule-footer"><span aria-hidden="true">✧</span> Questions welcomed. Privacy respected.</div>
+      </aside>
+    </div>
+  </section></CampaignWindow>;
 }

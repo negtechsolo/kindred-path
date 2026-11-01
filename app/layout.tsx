@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { AnniversaryRibbon } from "./components/AnniversaryRibbon";
 import { SiteShell } from "./components/SiteShell";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ifmkindredpathfertilitycentre.com"),
@@ -49,7 +52,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <SiteShell>{children}</SiteShell>
+        <SiteShell ribbon={<AnniversaryRibbon />}>{children}</SiteShell>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </body>
     </html>
