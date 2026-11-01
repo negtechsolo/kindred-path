@@ -1,3 +1,13 @@
+# Kindred Path Fertility Centre
+
+The deployable project uses Next.js on Vercel. For the new private main-site dashboard, see [setup instructions](docs/ADMIN-SETUP.md) and the [additive Supabase migration](migrations/001_main_website_dashboard.sql). Existing email configuration remains unchanged.
+
+Build: `npm run build`. Regression checks: `npm run test:dashboard`.
+
+The older starter notes below are retained for provenance; they do not describe the current Vercel build.
+
+---
+
 # vinext-starter
 
 A clean full-stack starter running on

@@ -1,8 +1,10 @@
+"use client";
+import { usePathname } from "next/navigation";
+import { WebsiteActivity } from "./WebsiteActivity";
 import Link from "next/link";
 import { contact } from "../data";
 import { ExperienceEnhancer } from "./ExperienceEnhancer";
 import { SiteHeader } from "./SiteHeader";
-import { AnniversaryRibbon } from "./AnniversaryRibbon";
 import { SocialLinks } from "./SocialLinks";
 
 const nav = [
@@ -83,11 +85,14 @@ function Footer() {
   );
 }
 
-export function SiteShell({ children }: { children: React.ReactNode }) {
+export function SiteShell({ children, ribbon }: { children: React.ReactNode; ribbon: React.ReactNode }) {
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return <>{children}</>;
   return (
     <>
+      <WebsiteActivity />
       <ExperienceEnhancer />
-      <AnniversaryRibbon />
+      {ribbon}
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
       {children}
