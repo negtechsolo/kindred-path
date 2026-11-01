@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./campaign-compact.css";
 import { AnniversaryRibbon } from "./components/AnniversaryRibbon";
 import { SiteShell } from "./components/SiteShell";
 

@@ -79,7 +79,13 @@ export function SiteHeader() {
       </div>
 
       <div className="shell header-inner">
-        <Brand />
+        <div className="header-partnership">
+          <Brand />
+          <div className="header-partner" aria-label="In partnership with IFM LASUTH, Institute of Fertility Medicine at Lagos State University Teaching Hospital">
+            <img src="/images/ifm-lasuth.webp" width="44" height="52" alt="LASUTH crest" />
+            <span>In partnership with<strong>IFM LASUTH</strong></span>
+          </div>
+        </div>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map(([label, href]) => {
