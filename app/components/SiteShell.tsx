@@ -73,6 +73,7 @@ function Footer() {
           <h3>Patient support</h3>
           <Link href="/book">Book a consultation</Link>
           <Link href="/contact">Contact the team</Link>
+          <Link href="/feedback">Share your experience</Link>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Website terms</Link>
         </div>
@@ -90,7 +91,7 @@ export function SiteShell({ children, ribbon }: { children: React.ReactNode; rib
   if (pathname.startsWith("/admin")) return <>{children}</>;
   return (
     <>
-      <WebsiteActivity />
+      {!pathname.startsWith("/feedback") && <WebsiteActivity />}
       <ExperienceEnhancer />
       {ribbon}
       <a className="skip-link" href="#main-content">Skip to content</a>
